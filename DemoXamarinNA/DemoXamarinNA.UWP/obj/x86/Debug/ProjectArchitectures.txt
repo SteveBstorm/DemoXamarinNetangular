@@ -1,0 +1,1 @@
+C:\Users\Steve\source\Demo\DemoXamarinNA\DemoXamarinNA\DemoXamarinNA.UWP\DemoXamarinNA.UWP.csproj;x86

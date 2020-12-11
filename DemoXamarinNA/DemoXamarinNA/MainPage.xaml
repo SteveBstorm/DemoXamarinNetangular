@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoXamarinNA.MainPage"
+             xmlns:extension="clr-namespace:DemoXamarinNA.MarkupExtention"
+             >
+
+    <StackLayout>
+        <RelativeLayout BackgroundColor="Cyan">
+            <BoxView BackgroundColor="Violet" x:Name="bv1"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=50}"></BoxView>
+            <Image Source="{extension:EmbeddedImage Ressource=DemoXamarinNA.Images.image.png}" 
+                   WidthRequest="100"
+                   Aspect="AspectFit"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=bv1, Property=Width, Factor=0.4,Constant=-35}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=bv1, Property=Height, Factor=0.5,Constant=20}"
+                   />
+        </RelativeLayout>
+        <Entry FontSize="30" Background="Chartreuse" IsPassword="True" Keyboard="Numeric"></Entry>
+        <Slider x:Name="slider" Minimum="0" Maximum="10"></Slider>
+        <Label x:Name="label" Text="{Binding Source={x:Reference slider} ,Path=Value}" />
+
+        <Picker>
+            <Picker.Items>
+                <x:String>Premier item</x:String>
+                <x:String>Deuxième item</x:String>
+                <x:String>Troisieme item</x:String>
+            </Picker.Items>
+        </Picker>
+        <DatePicker></DatePicker>
+        <Editor Placeholder="Entrez quelque chose"></Editor>
+        <Grid Margin="20" BackgroundColor="Aquamarine">
+            <Grid.RowDefinitions >
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Valider" Grid.Row="1" Grid.ColumnSpan="2"></Button>
+            <DatePicker Grid.Column="1"></DatePicker>
+            <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text ="blabla"></Label>
+        </Grid>
+        <Image Source="{extension:EmbeddedImage Ressource=DemoXamarinNA.Images.image.png}"
+               HeightRequest="200"
+               WidthRequest="400"
+               Aspect="AspectFit"
+               BackgroundColor="Red"
+               />
+
+        
+        
+    </StackLayout>
+    
+</ContentPage>
