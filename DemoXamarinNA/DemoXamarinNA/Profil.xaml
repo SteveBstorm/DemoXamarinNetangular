@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoXamarinNA.Profil"
+             xmlns:extention="clr-namespace:DemoXamarinNA.MarkupExtention">
+    <ContentPage.Content>
+   
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <RelativeLayout Grid.Row="0" >
+                <BoxView BackgroundColor="Beige" x:Name="bv1"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.3}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                     ></BoxView>
+                <Label FontSize="30" StyleClass="nom" Text="Steve Lorent" 
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=bv1, Factor=0.4,Constant=-30, Property=Width}"></Label>
+                <Frame CornerRadius="50"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=bv1, Property=Width, Factor=0.5,Constant=-65}"
+                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=bv1, Property=Height, Factor=0.5,Constant=20}">
+                    <Image Source="{extention:EmbeddedImage Ressource=DemoXamarinNA.Images.image.png}"
+                    Aspect="AspectFit"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   />
+                </Frame>
+                
+                <ScrollView 
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, ElementName=bv1, Property=Height, Factor=0.4}">
+                    <StackLayout>
+                        <Grid Margin="15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                        
+                        <Label TextColor="Black" Text="GSM"></Label>
+                        <Label Text="+32492 12 34 56" Grid.Column="1"></Label>
+                        </Grid>
+                        <Grid Margin="15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label TextColor="Black" Text="Tel"></Label>
+                            <Label Text="012 23 45 67" Grid.Column="1"></Label>
+                        </Grid>
+                        <Grid Margin="15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label TextColor="Black" Text="E-mail"></Label>
+                            <Label Text="steve.lorent@bstorm.be" Grid.Column="1"></Label>
+                        </Grid>
+                        <BoxView   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   HeightRequest="1"
+                                   WidthRequest="400"  
+                                   Color="#5b5d68"></BoxView>
+                        <Grid Margin="15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label TextColor="Black" Text="Info"></Label>
+                            <Label Text="blabla" Grid.Column="1"></Label>
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+                
+            </RelativeLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

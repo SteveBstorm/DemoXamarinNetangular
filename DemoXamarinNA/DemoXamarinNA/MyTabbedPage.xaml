@@ -15,7 +15,6 @@
     </ContentPage>
     
     <local:MaSuperPage Title="Page2" />
-    
-    <ContentPage Title="Tab 3">
-    </ContentPage>
+
+    <local:Profil Title="Profil" />
 </TabbedPage>
